@@ -46,10 +46,10 @@ class TestTaskManager(unittest.TestCase):
 
     def test_filter_overdue(self):
         self.add_task("Finalizar projeto", "2024-09-15")
-        self.add_task("Comprar presentes", "2024-09-10")
+        self.add_task("Comprar presentes", "2024-09-20")
         overdue_tasks = self.filter_overdue()
         self.assertEqual(len(overdue_tasks), 1)
-        self.assertEqual(overdue_tasks[0]['title'], "Comprar presentes")
+        self.assertEqual(overdue_tasks[0]['title'], "Finalizar projeto")
 
     def test_sort_tasks_by_due_date(self):
         self.add_task("Estudar para prova", "2024-09-20")
