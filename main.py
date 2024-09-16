@@ -49,11 +49,9 @@ def task_manager():
         current_date = datetime.now()
         return [task for task in tasks if task['due_date'] and task['due_date'] < current_date]
 
-    # Função de alta ordem
     def apply_to_tasks(operation):
         return [operation(task) for task in tasks]
 
-    # Exemplo de alta ordem: marcar todas as tarefas como concluídas
     def mark_all_as_done():
         apply_to_tasks(lambda task: task.update({"status": "concluída"}))
 
